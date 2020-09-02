@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>第一个实例</title>
+  <link rel="stylesheet" href="">
+  <!-- 普通方式引入vue.js -->
+  <!-- <script src="./js/vue.js"></script> -->
+  <!-- CDN方式引入vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 采用本地化方法，使用MVVM模式开发Vue程序 -->
+    <!-- 定义视图View，也就是编写界面代码 -->
+  <div id="app">
+    <!-- 通过指令v-model实现视图和模型中数据的双向绑定，也就是说，用户可以通过视图来显示相应的数据，同时也可以通过视图来修改相应的数据 -->
+    <input type="text" v-model="msg">
+    <!-- 双花括号用于将模型中数据值插入到视图中 -->
+      <p>{{msg}}</p>
+  </div>
+  
+  <script>
+    // 定义模型Model，也就是编写数据相关代码，模型中的数据要包含在一个对象中，以对象属性的形式编写。
+    var myData = {
+      msg:'Hello world'
+    }
+
+    // 定义视图模型ViewModel,是整个程序的核心，用于连接视图和模型，实现视图模型的双向通信，也称为双向绑定
+    // 通过创建一个Vue实例对象来实现视图模型的定义
+    var vm = new Vue({
+      // 通过el选项指定该程序要用到的视图（界面）。专业的讲是将用new Vue生成的Vue对象挂载到el选项所指定的视图上。el是element的单词的缩写。
+        el: '#app',
+      // 通过data选项指定该程序要用到的数据
+        data: myData
+    })
+
+    // {
+      // height: 180
+
+    // }
+  </script>
+</body>
+</html>
